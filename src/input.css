@@ -1,3 +1,68 @@
+/* Visually-hidden helper for accessible labels */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Hamburger toggle: hidden by default, shown at <=1130px */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #111827; /* default text color; tweak as needed */
+}
+
+/* Menu behavior at and below 1130px: hide the nav list, show hamburger */
+@media (max-width: 1130px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  /* hide the nav list by default on small screens */
+  .stack-1440 ul {
+    display: none;
+    width: 100%;
+  }
+
+  /* when the wrapper has `.nav-open`, show the list */
+  .stack-1440.nav-open ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+  }
+
+  /* hide the extra icons block on small screens by default */
+  .nav-extra {
+    display: none;
+  }
+
+  /* show the extra icons together with the menu when nav is open */
+  .stack-1440.nav-open .nav-extra {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+  }
+
+  /* keep the icon and logo nicely spaced */
+  .stack-1440 > div:first-child {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Small improvement: make the nav-toggle SVG inherit text color and not be too large */
+.nav-toggle svg { display: block; width: 28px; height: 28px; }
 @import "tailwindcss";
 
 @font-face {
@@ -13,7 +78,12 @@ body {
 
 @layer components {
   h1{
-    @apply font-bold
+    
+    @apply font-bold text-white text-[56px]
+  }
+    h2{
+    
+    @apply font-bold text-[56px]
   }
   p{
 font-size: clamp(1.125rem, calc(1.943rem + -0.909vw), 1.500rem);
@@ -24,4 +94,69 @@ font-size: clamp(1.125rem, calc(1.943rem + -0.909vw), 1.500rem);
     @apply font-bold
   }
  
+}
+
+/* Underline bar: use a pseudo-element so the text layout isn't disturbed
+   and the animation is smooth. Anchor becomes the positioned container. */
+ul li a {
+  position: relative; /* establishes containing block for ::after */
+}
+
+ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -37px; /* distance from text */
+  width: 0%;
+  height: 4px; /* thickness of the bar */
+  background-color: #BC913B; /* same color as text */
+  transition: width 0.3s ease;
+  will-change: width;
+}
+
+/* Hover and keyboard-focus (accessible) state */
+ul li a:hover::after,
+ul li a:focus-visible::after {
+  width: 100%;
+}
+
+.btn{
+    @apply bg-[#BC913B] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#A17C33] transition-colors duration-300;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  ul li a::after {
+  transition: none;
+  }
+}
+
+/* At viewport widths 1440px and below, stack the nav wrapper vertically. */
+@media (max-width: 1440px) {
+  /* Use the helper `.stack-1440` added to the HTML */
+  .stack-1440 {
+    flex-direction: column;
+  
+    gap: 1rem; /* spacing between rows */
+  }
+
+  /* Optional: make the nav list wrap to vertical and center items */
+  
+}
+
+@media (max-width: 1130px) {
+  
+    .stack-1440 {
+    flex-direction: row;
+  
+    gap: 1rem; /* spacing between rows */
+  }
+ ul li a::after {
+
+  bottom: -3px; /* distance from text */
+ 
+}
+
+  
+  
 }
