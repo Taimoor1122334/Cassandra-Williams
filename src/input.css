@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  h1{
+    @apply font-bold
+  }
+  p{
+font-size: clamp(1.125rem, calc(1.943rem + -0.909vw), 1.500rem);
+
+  }
+  h3{
+    font-size:clamp(1.750rem, calc(2.568rem + -0.909vw), 2.125rem);
+    @apply font-bold
+  }
+ 
+}
