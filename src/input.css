@@ -10,21 +10,41 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'social-icons';
+    src: url('../assets/fonts/Social\ Media\ Circled.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+h4 a{
+    font-family: 'social-icons';
+    font-size: 30px;
+    
+}
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: "proxima-nova", sans-serif;
+
 }
 
 @layer components {
   h1{
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
     font-size: clamp(2.5rem, 2.9vw + 1rem, 3.5rem);
-    @apply font-bold text-white 
+    @apply  text-white 
   }
     h2{
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+
     font-size:clamp(2.5rem, 2.9vw + 1rem, 3.5rem);
-    @apply font-bold text-shadow-black
+    @apply  text-shadow-black
   }
 
   h2.heading{
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+
     font-size: clamp(1.875rem, 2.79vw + 1rem, 3.5rem);
   }
   p{
@@ -32,15 +52,22 @@ font-size: clamp(1rem, 0.15vw + 1rem, 1.125rem);;
 
   }
   h3{
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
     font-size: clamp(1.5rem, 1.25vw + 1rem, 2.125rem);
   }
   h4{
-    font-size:clamp(1.5rem, 0.85vw + 1rem, 1.75rem);
+    font-family: "proxima-nova", sans-serif;
+
+    font-size:clamp(1.375rem, 0.56vw + 1rem, 2.5rem);
     @apply font-bold
   }
   .btn{
+    font-family: "brandon-grotesque", sans-serif;
+font-weight: 700;
+
   font-size: clamp(1rem, 0.4vw + 0.75rem, 1.143rem);
-    @apply bg-[#BC913B] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#A17C33] transition-colors duration-300;
+    @apply bg-[#BC913B] text-white  py-3 px-6 rounded-full hover:bg-[#A17C33] transition-colors duration-300;
 }
  
 }
@@ -171,4 +198,12 @@ h4{
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+ul li a {
+  
+    font-family: "proxima-nova", sans-serif;
+font-weight: 600;
+
+
 }
