@@ -77,18 +77,55 @@ ul li a:focus-visible::after {
 }
 
 /* At viewport widths 1440px and below, stack the nav wrapper vertically. */
-@media (max-width: 1480px) {
-  /* Use the helper `.stack-1440` added to the HTML */
+/* @media (max-width: 1480px) {
+ 
   .stack-1440 {
     flex-direction: column;
   align-items: normal;
     gap: 1rem; 
   }
-
-  /* Optional: make the nav list wrap to vertical and center items */
   
+} */
+
+ @media (max-width: 1480px) {
+.stack-1440 .logo{
+    width:300px ;
 }
-@media (max-width: 1026px) {
+
+ul li a{
+    font-size: 16px;
+}
+
+h4{
+    font-size: 20px;
+}
+
+}
+
+ @media (max-width: 1290px) {
+div.break-1026{
+    @apply space-x-5
+}
+}
+
+ @media (max-width: 1255px) {
+div.break-1026 ul{
+    @apply space-x-4
+}
+}
+
+ @media (max-width: 1160px) {
+.stack-1440 .logo{
+    width:250px ;
+}
+ul li a{
+    font-size: 14px;
+}
+h4{
+    font-size: 20px;
+}
+}
+@media (max-width: 1036px) {
  
   .break-1026{
     display: none;
@@ -116,3 +153,22 @@ ul li a:focus-visible::after {
 }
  
 
+
+#mainNavbar {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* smoother easing */
+}
+
+#mainNavbar.fixed {
+  animation: fadeInDown 0.8s ease-out; /* optional fade-in */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
