@@ -134,6 +134,12 @@ h4{
 
 }
 
+@media (max-width: 1480px) {
+.width-1480-px{
+    @apply px-6
+}
+}
+
  @media (max-width: 1290px) {
 div.break-1026{
     @apply space-x-5
