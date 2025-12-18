@@ -76,7 +76,8 @@ font-weight: 600;
   
   .sandwich-gen-will h4{
     font-size: clamp(1.5rem, 0.97vw + 1rem, 1.875rem);
-    @apply text-[#5C5C5C] font-[600]
+     font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    @apply text-[#5C5C5C] font-[600];
   }
 
   h5{
