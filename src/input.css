@@ -76,6 +76,7 @@ font-weight: 600;
   
   .sandwich-gen-will h4{
     font-size: clamp(1.5rem, 0.97vw + 1rem, 1.875rem);
+    @apply text-[#5C5C5C] font-[600]
   }
 
   h5{
@@ -89,6 +90,11 @@ font-weight: 700;
   font-size: clamp(1rem, 0.4vw + 0.75rem, 1.143rem);
     @apply bg-[#BC913B] text-white  py-3 px-6 rounded-full hover:bg-[#A17C33] transition-colors duration-300;
 }
+.textile-evangelist-list ul li{
+  @apply  text-[#5C5C5C];
+  font-size: clamp(1rem, 0.15vw + 1rem, 1.125rem);
+}
+
  
 }
 
@@ -113,6 +119,8 @@ ul li a:hover::after,
 ul li a:focus-visible::after {
   width: 100%;
 }
+
+
 
 
 
@@ -177,6 +185,8 @@ ul li a{
 h4{
     font-size: 20px;
 }
+
+
 }
 @media (max-width: 1036px) {
  
