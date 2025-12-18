@@ -1,8 +1,9 @@
 const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
 
   const toggleMenu = () => {
-    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('menu-open');
 
     // Hamburger animation to cross
     hamburger.children[0].classList.toggle('rotate-45');
@@ -17,9 +18,19 @@ const hamburger = document.getElementById('hamburger');
     toggleMenu();
   });
 
+  // Close button click handler
+  if (closeMenu) {
+    closeMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileMenu.classList.contains('menu-open')) {
+        toggleMenu();
+      }
+    });
+  }
+
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && !closeMenu?.contains(e.target) && mobileMenu.classList.contains('menu-open')) {
       toggleMenu();
     }
   });
@@ -27,7 +38,7 @@ const hamburger = document.getElementById('hamburger');
   // Close menu when clicking on any link
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+      if (mobileMenu.classList.contains('menu-open')) toggleMenu();
     });
   });
 
