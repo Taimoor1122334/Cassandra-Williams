@@ -280,6 +280,9 @@
   .min-h-\[9vh\] {
     min-height: 9vh;
   }
+  .min-h-\[10vh\] {
+    min-height: 10vh;
+  }
   .min-h-\[80vh\] {
     min-height: 80vh;
   }
@@ -288,6 +291,9 @@
   }
   .min-h-\[95vh\] {
     min-height: 95vh;
+  }
+  .min-h-\[100vh\] {
+    min-height: 100vh;
   }
   .min-h-\[350px\] {
     min-height: 350px;
@@ -510,6 +516,9 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-\[center-25\%\] {
+    object-position: center-25%;
   }
   .object-\[center_25\%\] {
     object-position: center 25%;
