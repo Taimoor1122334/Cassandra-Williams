@@ -73,3 +73,30 @@ document.querySelectorAll('.dropdown-container').forEach(container => {
 
     
 });
+
+
+// -------video play---------------
+   const video = document.getElementById("customVideo");
+  const playBtn = document.getElementById("playBtn");
+  const thumbnail = document.getElementById("videoThumbnail");
+
+  let hasPlayedOnce = false;
+
+  // First play
+  playBtn.addEventListener("click", () => {
+    video.play();
+    playBtn.classList.add("hidden");
+
+    if (!hasPlayedOnce) {
+      thumbnail.classList.add("hidden");
+      hasPlayedOnce = true;
+    }
+  });
+
+  // Pause video (thumbnail will NOT return)
+  video.addEventListener("click", () => {
+    if (!video.paused) {
+      video.pause();
+      playBtn.classList.remove("hidden");
+    }
+  });

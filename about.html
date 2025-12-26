@@ -112,7 +112,56 @@
 
 </div>
 </section>
+
+
+
+
+<!------------video section----------->
+
+<section class="w-full  px-6 md:px-12 lg:px-17 max-w-[1400px] mx-auto">
+  <div class="relative w-full aspect-video  mx-auto rounded-3xl overflow-hidden">
+
+    <!-- Thumbnail -->
+    <img 
+      id="videoThumbnail"
+      src="assets/images/thumbnail.png"
+      alt="Video Thumbnail"
+      class="absolute inset-0 w-full h-full object-cover z-10 rounded-3xl"
+    />
+
+    <!-- Video -->
+    <video 
+      id="customVideo"
+      class="w-full h-full absolute inset-0  object-cover cursor-pointer rounded-3xl"
+      loop
+    >
+      <source src="assets/The-Textile-Evangelist.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Play Button -->
+    <button
+      id="playBtn"
+      class="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+    >
+      <div class="w-20 h-20 rounded-full flex items-center justify-center shadow-lg"
+           style="background-color:#BC913B;">
+        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </div>
+    </button>
+
+  </div>
+</section>
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-17 py-10 md:py-20 flex flex-col md:flex-row items-center  gap-6">
+  <p class="font-bold ">Click The Button To Read Our Newsletter</p>
+  <a href="#" class="btn">Access newsletter</a>
 </div>
+
+</div>
+
+<!------------------video section end--------------------------->
 
 <!-- -------------call t0 action--------------- -->
     <section class="px-6 bg-gradient-to-r from-[#000000] to-[#BC913B]" >
