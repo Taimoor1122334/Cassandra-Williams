@@ -1,0 +1,275 @@
+
+
+
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'social-icons';
+    src: url('../assets/fonts/Social\ Media\ Circled.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+h4 a{
+    font-family: 'social-icons';
+    font-size: 30px;
+    
+}
+h3 a{
+    font-family: 'social-icons';
+    font-size: 30px;
+    
+}
+body {
+    font-family: "proxima-nova", sans-serif;
+
+}
+
+@layer components {
+  h1{
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+    font-size: clamp(2.5rem, 2.9vw + 1rem, 3.5rem);
+    @apply  text-white 
+  }
+  .large-heading{
+     font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+    font-size: clamp(2.5rem, 2.9vw + 1rem, 3.5rem);
+  }
+    h2{
+        font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+
+    font-size:clamp(2.5rem, 2.9vw + 1rem, 3.5rem);
+    @apply  text-shadow-black
+  }
+
+  h2.heading{
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+
+    font-size: clamp(1.875rem, 2.79vw + 1rem, 3.5rem);
+  }
+  p{
+font-size: clamp(1rem, 0.15vw + 1rem, 1.125rem);
+color: #5C5C5C;
+
+  }
+  h3{
+    font-family: "itc-avant-garde-gothic-pro", sans-serif;
+font-weight: 600;
+    font-size: clamp(1.5rem, 1.25vw + 1rem, 2.125rem);
+  }
+  h4{
+    font-family: "proxima-nova", sans-serif;
+
+    font-size:clamp(1.375rem, 0.56vw + 1rem, 2.5rem);
+    @apply font-bold
+  }
+  
+  .sandwich-gen-will h4{
+    font-size: clamp(1.5rem, 0.97vw + 1rem, 1.875rem);
+     font-family: "itc-avant-garde-gothic-pro", sans-serif;
+    @apply text-[#5C5C5C] font-[600];
+  }
+
+  h5{
+font-size: clamp(1.125rem, 0.42vw + 1rem, 1.375rem);
+font-weight: 700;
+  }
+  .btn{
+    font-family: "brandon-grotesque", sans-serif;
+font-weight: 700;
+
+  font-size: clamp(1rem, 0.4vw + 0.75rem, 1.143rem);
+    @apply bg-[#BC913B] text-white  py-3 px-6 rounded-full hover:bg-[#A17C33] transition-colors duration-300;
+}
+.textile-evangelist-list ul li{
+  @apply  text-[#5C5C5C];
+  font-size: clamp(1rem, 0.15vw + 1rem, 1.125rem);
+}
+
+ 
+}
+
+ul li a {
+  position: relative;
+}
+
+ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -37px; /* distance from text */
+  width: 0%;
+  height: 4px; /* thickness of the bar */
+  background-color: #BC913B; /* same color as text */
+  transition: width 0.3s ease;
+  will-change: width;
+}
+
+/* Hover and keyboard-focus (accessible) state */
+ul li a:hover::after,
+ul li a:focus-visible::after {
+  width: 100%;
+}
+
+
+
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  ul li a::after {
+  transition: none;
+  }
+}
+
+/* At viewport widths 1440px and below, stack the nav wrapper vertically. */
+/* @media (max-width: 1480px) {
+ 
+  .stack-1440 {
+    flex-direction: column;
+  align-items: normal;
+    gap: 1rem; 
+  }
+  
+} */
+
+ @media (max-width: 1480px) {
+.stack-1440 .logo{
+    width:300px ;
+}
+
+ul li a{
+    font-size: 16px;
+}
+
+h4{
+    font-size: 20px;
+}
+
+}
+
+@media (max-width: 1480px) {
+.width-1480-px{
+    @apply px-6
+}
+}
+
+ @media (max-width: 1290px) {
+div.break-1026{
+    @apply space-x-5
+}
+}
+
+ @media (max-width: 1255px) {
+div.break-1026 ul{
+    @apply space-x-4
+}
+}
+
+ @media (max-width: 1160px) {
+.stack-1440 .logo{
+    width:250px ;
+}
+ul li a{
+    font-size: 14px;
+}
+h4{
+    font-size: 20px;
+}
+
+
+}
+@media (max-width: 1036px) {
+ 
+  .break-1026{
+    display: none;
+  }
+  .stack-1440{
+    flex-direction: row;
+  }
+  .hamburger{
+    display: flex;
+  }
+  ul li a::after {
+
+  bottom: -4px; 
+  
+}
+}
+
+@media (max-width: 1220px) {
+ 
+.bg-gradient-to-r div{
+    flex-direction: column;
+    justify-content: center;
+}
+
+}
+ 
+
+
+#mainNavbar {
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* smoother easing */
+}
+
+#mainNavbar.fixed {
+  animation: fadeInDown 0.8s ease-out; /* optional fade-in */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ul li a {
+  
+    font-family: "proxima-nova", sans-serif;
+font-weight: 600;
+
+
+}
+
+/* Mobile Menu Styles */
+#mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: white;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  padding-top: 80px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+#mobileMenu.menu-open {
+  transform: translateY(0);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  #mobileMenu {
+    transition: transform 0.2s ease;
+  }
+}

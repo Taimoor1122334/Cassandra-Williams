@@ -273,3 +273,13 @@ font-weight: 600;
     transition: transform 0.2s ease;
   }
 }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+  }
+
+  .accordion-content.open {
+    max-height: 3000px; /* large enough for your content */
+  }
